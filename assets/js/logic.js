@@ -56,7 +56,7 @@ function restaurants() {
         var location = "location=" + lat + ", " + lng + "&radius=17000&type=restaurant&keyword=patio";
 
         // QUERY URL FOR RESTAURANTS, DONT FORGET KEYWORD=PATIO
-        var queryURL2 = "http://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?"+ location + APIKEY;
+        var queryURL2 = "https://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?"+ location + APIKEY;
         $.ajax({
             url: queryURL2,
             method: "GET"

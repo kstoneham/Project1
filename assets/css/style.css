@@ -28,6 +28,7 @@ h1 {
   background-color: rgba(59, 56, 56, 0.281);
   font-size: 30px;
   width: 100%;
+  text-align: center;
 }
 
 #weather {
@@ -35,4 +36,5 @@ h1 {
   background-color: rgba(59, 56, 56, 0.281);
   font-size: 30px;
   width: 100%;
+  text-align: center;
 }

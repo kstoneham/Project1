@@ -20,12 +20,14 @@
   <div class="container">
     <div id="jumbo" class="jumbotron py-1" style="text-align: center;">
       <h1 class="display-4">Project Patio!</h1>
-      <hr>
-      <p>A restaurant search application for people obsessed with eating outside.</p>
-      <hr class="my-4">
+      <h2>A restaurant search application for people obsessed with eating outside.</h2>
+      <hr style='border-color: rgb(243, 242, 223);'>
+      <div id="error-pane" style="text-align: center;"></div>
       <form id ="myForm">
         <div class="form-group">
-          <input type="text" class="form-control" id="search-bar" placeholder="#search-bar">
+          <input type="text" class="form-control" id="search-bar" placeholder="Search by City">
+          <h2>OR</h2>
+          <input type="text" class="form-control" id="search-zip" placeholder="#search-zip">
         </div>
       </form>
       <a class="btn btn-primary btn-lg" href="#" id="search-btn" role="button">#search-btn</a>

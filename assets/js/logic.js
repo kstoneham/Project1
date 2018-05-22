@@ -129,6 +129,7 @@ function restaurantsZIP() {
 $("#myForm").submit(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
+
     if (checkBlank === ""){
         weatherZIP();
         restaurantsZIP();
@@ -147,6 +148,7 @@ $("#myForm").submit(function(event){
 $("#search-btn").click(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
+    
     if (checkBlank === ""){
         weatherZIP();
         restaurantsZIP();

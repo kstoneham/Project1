@@ -1,29 +1,3 @@
-// PREVENTS PAGE REFRESH ON HITTING ENTER IN SEARCH BAR
-$("#myForm").submit(function(event){
-    event.preventDefault();
-    var checkBlank = $("#search-bar").val().trim();
-    if (checkBlank === ""){
-        weatherZIP();
-        restaurantsZIP();
-    } else {
-        weather();
-        restaurants();
-    }
-    $("#search-zip").val("");
-})
-// SEARCH BUTTON 
-$("#search-btn").click(function(event){
-    event.preventDefault();
-    var checkBlank = $("#search-bar").val().trim();
-    if (checkBlank === ""){
-        weatherZIP();
-        restaurantsZIP();
-    } else {
-        weather();
-        restaurants();
-    }
-    $("#search-zip").val("");
-})
 // WEATHER AJAX CALL
 function weather() {
     var citySearch = $("#search-bar").val().trim();
@@ -48,7 +22,7 @@ function weather() {
 // WEATHER AJAX CALL BY ZIP
 function weatherZIP() {
     var zipCode = $("#search-zip").val().trim();
-    console.log(zipCode);
+    console.log("ZIP Code: " + zipCode);
     // ZIP CODE API
     var APIKEY = "3BHfNoGVJZtKdX7h9rLzIr9OfCcEnusmDgQYoWIeUKJqnvKjAbYHrcsHtg7n5APZ";
     var queryURL = "https://cors-everywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" + APIKEY + "/info.json/" + zipCode + "/degrees";
@@ -104,7 +78,7 @@ function restaurants() {
         .then(function(rest){
             console.log("Restaurants: ", rest);
             $("#restaurants").append("<h2>Restaurants</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;
                 // var patioLink = rest.results[i].photos[0].html_attributions[0];
@@ -116,11 +90,9 @@ function restaurants() {
         })
     })
 }
-
 // ZIP CODE AJAX CALL, THEN GOOGLE PLACES SEARCH CALL
 function restaurantsZIP() {
     var zipCode = $("#search-zip").val().trim();
-    console.log(zipCode);
     // ZIP CODE API
     var APIKEY = "3BHfNoGVJZtKdX7h9rLzIr9OfCcEnusmDgQYoWIeUKJqnvKjAbYHrcsHtg7n5APZ";
     var queryURL = "https://cors-everywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" + APIKEY + "/info.json/" + zipCode + "/degrees";
@@ -129,11 +101,9 @@ function restaurantsZIP() {
         method: "GET"
     })
     .then(function(response){
-        console.log(response);
         var APIKEY2 = "&key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc";
         var lat = response.lat;
         var lng = response.lng;
-        console.log("lat,lng: ", lat, lng);
         var location = "location=" + lat + ", " + lng + "&radius=17000&type=restaurant&keyword=patio";
         var queryURL2 = "https://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + location + APIKEY2;
         $.ajax({
@@ -143,7 +113,7 @@ function restaurantsZIP() {
         .then(function(rest){
             console.log("Restaurants: ", rest);
             $("#restaurants").append("<h2>Restaurants</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;
                 // var patioLink = rest.results[i].photos[0].html_attributions[0];
@@ -155,7 +125,39 @@ function restaurantsZIP() {
         })
     })
 }
-
-
-
-
+// PREVENTS PAGE REFRESH ON HITTING ENTER IN SEARCH BAR
+$("#myForm").submit(function(event){
+    event.preventDefault();
+    var checkBlank = $("#search-bar").val().trim();
+    if (checkBlank === ""){
+        weatherZIP();
+        restaurantsZIP();
+        $("#restaurants").empty();
+        $("#weather").empty();
+    } else {
+        weather();
+        restaurants();
+        $("#restaurants").empty();
+        $("#weather").empty();
+    }
+    $("#search-zip").val("");
+    $("#search-bar").val("");
+})
+// SEARCH BUTTON 
+$("#search-btn").click(function(event){
+    event.preventDefault();
+    var checkBlank = $("#search-bar").val().trim();
+    if (checkBlank === ""){
+        weatherZIP();
+        restaurantsZIP();
+        $("#restaurants").empty();
+        $("#weather").empty();
+    } else {
+        weather();
+        restaurants();
+        $("#restaurants").empty();
+        $("#weather").empty();       
+    }
+    $("#search-zip").val("");
+    $("#search-bar").val("");
+})

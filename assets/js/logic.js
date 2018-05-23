@@ -11,9 +11,11 @@ function weather() {
         method: "GET"
     })
     .then(function(response){
+        console.log(response);
         // console.log("Weather: ", response);
         var tempConverted = ((response.main.temp - 273.15) * 1.80 + 32);
         var temperature = tempConverted.toFixed(1);
+        
         console.log("Temperature: " + temperature + " fahrenheit"); 
         // POST WEATHER TO HTML
         $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ temperature + " F" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));

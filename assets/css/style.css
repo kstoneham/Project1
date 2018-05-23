@@ -23,6 +23,14 @@ h1 {
   align-content: center;
 }
 
+#display {
+  color: rgb(243, 242, 223);
+  text-align: center;
+  font-size: 40px;
+  align-content: center;
+  font-family: 'Courgette', cursive;
+}
+
 #restaurants {
   color: rgb(243, 242, 223);
   background-color: rgba(59, 56, 56, 0.281);

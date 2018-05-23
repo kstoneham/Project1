@@ -54,6 +54,9 @@ function weatherZIP() {
 // MAPS AJAX CALLS BY CITY, THEN PLACES SEARCH CALL
 function restaurants() {
     var citySearch = $("#search-bar").val().trim();
+    $("#display").append("<h2 style='text-align: center;'>" + 
+    "You Searched: " + citySearch + 
+    "</h2>");
     var APIKEY = "&key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc";
     // QUERY URL FOR CONVERTING CITY SEARCH TO LAT/LNG COORDINATES
     var queryURL = "https://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=" + citySearch + APIKEY;
@@ -93,6 +96,9 @@ function restaurants() {
 // ZIP CODE AJAX CALL, THEN GOOGLE PLACES SEARCH CALL
 function restaurantsZIP() {
     var zipCode = $("#search-zip").val().trim();
+    $("#display").append("<h2 style='text-align: center;'>" + 
+    "You Searched: " + zipCode + 
+    "</h2>");
     // ZIP CODE API
     var APIKEY = "3BHfNoGVJZtKdX7h9rLzIr9OfCcEnusmDgQYoWIeUKJqnvKjAbYHrcsHtg7n5APZ";
     var queryURL = "https://cors-everywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" + APIKEY + "/info.json/" + zipCode + "/degrees";
@@ -129,6 +135,7 @@ function restaurantsZIP() {
 $("#myForm").submit(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
+    $("#display").val("");
 
     if (checkBlank === ""){
         weatherZIP();
@@ -148,7 +155,8 @@ $("#myForm").submit(function(event){
 $("#search-btn").click(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
-    
+    $("#display").val("");
+
     if (checkBlank === ""){
         weatherZIP();
         restaurantsZIP();

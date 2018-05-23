@@ -22,27 +22,19 @@
       <h1 class="display-4">Project Patio!</h1>
       <h2>A restaurant search application for people obsessed with eating outside.</h2>
       <hr style='border-color: rgb(243, 242, 223);'>
+      <!--ERROR PANE-->
       <div id="error-pane" style="text-align: center;"></div>
       <form id ="myForm">
         <div class="form-group">
-          <input type="text" class="form-control" id="search-bar" placeholder="Search by City">
+          <input type="text" class="form-control" id="search-bar" placeholder="Search by City or Address">
           <h2>OR</h2>
-          <input type="text" class="form-control" id="search-zip" placeholder="Search by ZIP">
+          <input type="number" class="form-control" id="search-zip" placeholder="Search by ZIP">
         </div>
       </form>
-      <a class="btn btn-primary btn-lg" href="#" id="search-btn" role="button">#search-btn</a>
+      <a class="btn btn-primary btn-lg" href="#" id="search-btn" role="button">Let's Eat!</a>
     </div>
   </div>
   <div class="container">
-  <!-- LABELED DIVS -->
-    <div class="row">
-      <div class="col-md-6">
-        <h1 style="text-align: center;">#restaurants</h1>
-      </div>
-      <div class="col-md-6">
-        <h1 style="text-align: center;">#weather</h1>
-      </div>
-    </div>    
   <!--RESTAURANTS AND WEATHER DISPLAY-->
     <div class="row">      
       <div class="col-md-6" style="text-align: center; border-style: solid; border-width: 1px;" id="restaurants"></div>

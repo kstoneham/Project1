@@ -131,6 +131,7 @@ function restaurantsZIP() {
         })
     })
 }
+
 // PREVENTS PAGE REFRESH ON HITTING ENTER IN SEARCH BAR
 $("#myForm").submit(function(event){
     event.preventDefault();

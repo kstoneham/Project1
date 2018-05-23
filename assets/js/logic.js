@@ -19,7 +19,7 @@ function weather() {
         var wind = response.wind.speed;
         console.log("Temperature: " + temperature + " fahrenheit"); 
         // POST WEATHER TO HTML
-        $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ temperature + " F" + "</p>" + "<p style='text-align: center;'>" + condition + "</p>" + "<p style='text-align: center;'>" + "Wind Speed: " + wind + " m/h" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
+        $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ "Temp: " + temperature + " \xB0F" + "</p>" + "<p style='text-align: center;'>" + "Precipitation: " + condition + "</p>" + "<p style='text-align: center;'>" + "Wind Speed: " + wind + " mph" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
     })
 }
 // WEATHER AJAX CALL BY ZIP
@@ -49,7 +49,7 @@ function weatherZIP() {
             var temperature = tempConverted.toFixed(1);
             console.log("Temperature: " + temperature + " fahrenheit"); 
             // POST WEATHER TO HTML
-            $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ temperature + " F" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
+            $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ "Temp: " + temperature + " \xB0F" + "</p>" + "<p style='text-align: center;'>" + "Precipitation: " + condition + "</p>" + "<p style='text-align: center;'>" + "Wind Speed: " + wind + " mph" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
         })    
 
     })

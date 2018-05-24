@@ -13,12 +13,15 @@ function weather() {
         method: "GET"
     })
     .then(function(response){
-        console.log("Weather: ", response);
+        console.log(response);
+        // console.log("Weather: ", response);
         var tempConverted = ((response.main.temp - 273.15) * 1.80 + 32);
         var temperature = tempConverted.toFixed(1);
+        var condition = response.weather[0].description;
+        var wind = response.wind.speed;
         console.log("Temperature: " + temperature + " fahrenheit"); 
         // POST WEATHER TO HTML
-        $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ temperature + " F" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
+        $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ "Temp: " + temperature + " \xB0F" + "</p>" + "<p style='text-align: center;'>" + "Precipitation: " + condition + "</p>" + "<p style='text-align: center;'>" + "Wind Speed: " + wind + " mph" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
     })
 }
 // WEATHER AJAX CALL BY ZIP
@@ -46,9 +49,11 @@ function weatherZIP() {
             console.log("Weather: ", response);
             var tempConverted = ((response.main.temp - 273.15) * 1.80 + 32);
             var temperature = tempConverted.toFixed(1);
+            var condition = response.weather[0].description;
+            var wind = response.wind.speed;
             console.log("Temperature: " + temperature + " fahrenheit"); 
             // POST WEATHER TO HTML
-            $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ temperature + " F" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
+            $("#weather").append($("<h2>Weather Conditions</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>" + "<p style='text-align: center;'>"+ "Temp: " + temperature + " \xB0F" + "</p>" + "<p style='text-align: center;'>" + "Precipitation: " + condition + "</p>" + "<p style='text-align: center;'>" + "Wind Speed: " + wind + " mph" + "</p>" + "<hr style='border-color: rgb(243, 242, 223);'>"));
         })    
 
     })

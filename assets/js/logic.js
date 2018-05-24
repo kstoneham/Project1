@@ -1,3 +1,5 @@
+// FUNCTIONS
+//-----------------------------------------------------
 // WEATHER AJAX CALL
 function weather() {
     var citySearch = $("#search-bar").val().trim();
@@ -11,7 +13,7 @@ function weather() {
         method: "GET"
     })
     .then(function(response){
-        // console.log("Weather: ", response);
+        console.log("Weather: ", response);
         var tempConverted = ((response.main.temp - 273.15) * 1.80 + 32);
         var temperature = tempConverted.toFixed(1);
         console.log("Temperature: " + temperature + " fahrenheit"); 
@@ -41,7 +43,7 @@ function weatherZIP() {
             method: "GET"
         })
         .then(function(response){
-            // console.log("Weather: ", response);
+            console.log("Weather: ", response);
             var tempConverted = ((response.main.temp - 273.15) * 1.80 + 32);
             var temperature = tempConverted.toFixed(1);
             console.log("Temperature: " + temperature + " fahrenheit"); 
@@ -51,6 +53,7 @@ function weatherZIP() {
 
     })
 }
+
 // MAPS AJAX CALLS BY CITY, THEN PLACES SEARCH CALL
 function restaurants() {
     var citySearch = $("#search-bar").val().trim();
@@ -131,13 +134,16 @@ function restaurantsZIP() {
         })
     })
 }
+//-----------------------------------------------------
 
+
+// MAIN PROCESS
+//-----------------------------------------------------
 // PREVENTS PAGE REFRESH ON HITTING ENTER IN SEARCH BAR
 $("#myForm").submit(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
     $("#display").empty("");
-
     if (checkBlank === ""){
         weatherZIP();
         restaurantsZIP();
@@ -157,7 +163,6 @@ $("#search-btn").click(function(event){
     event.preventDefault();
     var checkBlank = $("#search-bar").val().trim();
     $("#display").empty("");
-
     if (checkBlank === ""){
         weatherZIP();
         restaurantsZIP();
@@ -172,3 +177,4 @@ $("#search-btn").click(function(event){
     $("#search-zip").val("");
     $("#search-bar").val("");
 })
+//-----------------------------------------------------

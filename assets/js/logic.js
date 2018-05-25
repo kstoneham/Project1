@@ -87,7 +87,7 @@ function restaurants() {
         })
         .then(function(rest){
             console.log("Restaurants: ", rest);
-            $("#restaurants").append("<h2>Restaurants</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
+            $("#restaurants").append("<h2>Restaurants within 10 miles</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
             for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;
@@ -126,7 +126,7 @@ function restaurantsZIP() {
         })
         .then(function(rest){
             console.log("Restaurants: ", rest);
-            $("#restaurants").append("<h2>Restaurants</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
+            $("#restaurants").append("<h2>Restaurants within 10 miles</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
             for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;

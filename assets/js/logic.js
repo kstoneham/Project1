@@ -77,9 +77,8 @@ function restaurants() {
         // console.log("GEOCODE: ", response);
         var lat = response.results[0].geometry.location.lat;
         var lng = response.results[0].geometry.location.lng;
-        // console.log("latitude, longitude: ", lat, ",", lng);
         // SEARCH BASED ON LOCATION, RADIUS, TYPE, KEYWORD
-        var location = "location=" + lat + ", " + lng + "&radius=17000&type=restaurant&keyword=patio";
+        var location = "location=" + lat + ", " + lng + "&radius=17000&rankby=prominence&type=restaurant&keyword=patio";
         // QUERY URL FORMULA
         var queryURL2 = "https://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?"+ location + APIKEY;
         $.ajax({
@@ -92,12 +91,13 @@ function restaurants() {
             for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;
-                // var patioLink = rest.results[i].photos[0].html_attributions[0];
-                $("#restaurants").append("<p style='text-align: center;'>" + patioResults + "</p>");
-                // $("#restaurants").append("<div style='text-align: center;'>" + patioLink + "</div>");
-                // $("a").attr("target", "_blank");
+                var patioAddress = rest.results[i].vicinity;
+                var patioRating = rest.results[i].rating;
+                $("#restaurants").append("<p style='text-align: center;'>" + patioResults + " - " + patioRating + "/5" + "</p>");
+                $("#restaurants").append("<p style='text-align: center; line-height: 0.1em;'>" + "\xB0" + "</p>")
+                $("#restaurants").append("<p style='text-align: center;'>" + patioAddress + "</p>");
+                $("#restaurants").append("<hr style='border-color: rgb(243, 242, 223);'>");
             }
-            $("#restaurants").append("<hr style='border-color: rgb(243, 242, 223);'>");
         })
     })
 }
@@ -118,7 +118,7 @@ function restaurantsZIP() {
         var APIKEY2 = "&key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc";
         var lat = response.lat;
         var lng = response.lng;
-        var location = "location=" + lat + ", " + lng + "&radius=17000&type=restaurant&keyword=patio";
+        var location = "location=" + lat + ", " + lng + "&radius=17000&rankby=prominence&type=restaurant&keyword=patio";
         var queryURL2 = "https://cors-everywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + location + APIKEY2;
         $.ajax({
             url: queryURL2,
@@ -130,18 +130,17 @@ function restaurantsZIP() {
             for (i = 0; i < rest.results.length; i++) {
                 // console.log(rest.results[i].name);
                 var patioResults = rest.results[i].name;
-                // var patioLink = rest.results[i].photos[0].html_attributions[0];
-                $("#restaurants").append("<p style='text-align: center;'>" + patioResults + "</p>");
-                // $("#restaurants").append("<div style='text-align: center;'>" + patioLink + "</div>");
-                // $("a").attr("target", "_blank");
+                var patioAddress = rest.results[i].vicinity;
+                var patioRating = rest.results[i].rating;
+                $("#restaurants").append("<p style='text-align: center;'>" + patioResults + " - " + patioRating + "/5" + "</p>");
+                $("#restaurants").append("<p style='text-align: center; line-height: 0.1em;'>" + "\xB0" + "</p>")
+                $("#restaurants").append("<p style='text-align: center;'>" + patioAddress + "</p>");
+                $("#restaurants").append("<hr style='border-color: rgb(243, 242, 223);'>");
             }
-            $("#restaurants").append("<hr style='border-color: rgb(243, 242, 223);'>");
         })
     })
 }
 //-----------------------------------------------------
-
-
 // MAIN PROCESS
 //-----------------------------------------------------
 // PREVENTS PAGE REFRESH ON HITTING ENTER IN SEARCH BAR

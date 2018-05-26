@@ -13,7 +13,6 @@ body {
   align-content: center;
   border-style: solid;
   border-width: 1px;
-
 }
 
 h1 {
@@ -38,7 +37,6 @@ h1 {
   width: 100%;
   text-align: center;
   font-family: 'Courgette', cursive;
-  
 }
 
 #weather {
@@ -49,3 +47,5 @@ h1 {
   text-align: center;
   font-family: 'Courgette', cursive;
 }
+
+#mapSmall {}

@@ -48,4 +48,6 @@ h1 {
   font-family: 'Courgette', cursive;
 }
 
-#mapSmall {}
+#mapSmall {
+  position: relative;
+}

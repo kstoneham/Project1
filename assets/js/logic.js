@@ -71,25 +71,25 @@ $(function () {
               <hr style='border-color: rgb(243, 242, 223);'/>
               <div id='places-map'>
               <iframe id='mapSmall'
-  width="335"
-  height="250"
+  width="485"
+  height="350"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+patio+in+Austin" allowfullscreen>
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+patio+in"+ place_id " allowfullscreen">
 </iframe>
               </div>
             </div>
           `
             $("#weather").append(weatherBox);
             console.log(lat, lng)
-            var map = new google.maps.Map(document.getElementById('places-map'), {
-              zoom: 10,
-              center: new google.maps.LatLng(-33.92, 151.25),
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
+            // var map = new google.maps.Map(document.getElementById('places-map'), {
+            //   zoom: 10,
+            //   center: new google.maps.LatLng(-33.92, 151.25),
+            //   mapTypeId: google.maps.MapTypeId.ROADMAP
+            // });
 
-            var infowindow = new google.maps.InfoWindow();
+            // var infowindow = new google.maps.InfoWindow();
 
-            var marker, i;
+            // var marker, i;
 
             /*
               wherever you are getting your places info (e.g. place.name, place.lat, place.lon)

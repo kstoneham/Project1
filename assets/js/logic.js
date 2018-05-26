@@ -71,7 +71,7 @@ $(function () {
               <hr style='border-color: rgb(243, 242, 223);'/>
               <div id='places-map'>
               <iframe id='mapSmall'
-  width="485"
+  width="100%"
   height="350"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+patio+in"+ place_id " allowfullscreen">

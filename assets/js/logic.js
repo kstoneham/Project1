@@ -121,14 +121,8 @@ $(function () {
         $.ajax({
             url: queryURL2,
             method: "GET"
-<<<<<<< HEAD
-        })
-        .then(function(rest){
-            console.log("Restaurants: ", rest);
-=======
           })
           .then(function (rest) {
->>>>>>> Dylan
             $("#restaurants").append("<h2>Restaurants within 10 miles</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
             for (i = 0; i < rest.results.length; i++) {
               var patioResults = rest.results[i].name;
@@ -164,14 +158,8 @@ $(function () {
         $.ajax({
             url: queryURL2,
             method: "GET"
-<<<<<<< HEAD
-        })
-        .then(function(rest){
-            console.log("Restaurants: ", rest);
-=======
           })
           .then(function (rest) {
->>>>>>> Dylan
             $("#restaurants").append("<h2>Restaurants within 10 miles</h2>" + "<hr style='border-color: rgb(243, 242, 223);'>");
             for (i = 0; i < rest.results.length; i++) {
               var patioResults = rest.results[i].name;

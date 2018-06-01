@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--LINKS TO JQUERY/BOOTSTRAP/AJAX-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <title>Project Patio!</title>
   <link rel="stylesheet" href="assets/css/style.css">
@@ -25,7 +26,7 @@
       <hr style='border-color: rgb(243, 242, 223);'>
       <!--ERROR PANE-->
       <div id="error-pane" style="text-align: center;"></div>
-      <form id ="myForm">
+      <form id="myForm">
         <div class="form-group">
           <input type="text" class="form-control" id="search-bar" placeholder="Search by City">
           <h2>OR</h2>
@@ -37,14 +38,19 @@
   </div>
   <div class="container">
     <div id="display"></div>
-  <!--RESTAURANTS AND WEATHER DISPLAY-->
-    <div class="row">      
-        <div class="col-md-6" style="text-align: center; border-style: solid; border-width: 1px;" id="weather"></div>
-        <div class="col-md-6" style="text-align: center; border-style: solid; border-width: 1px;" id="restaurants"></div>
-    </div>
-  </div>
+    <!--RESTAURANTS AND WEATHER DISPLAY-->
+    <div class="row">
+      <div id="weather" class=" col-md-6 " style="text-align: center; border-style: solid; border-width: 1px;">
 
-  <script src="assets/js/logic.js" defer></script>
+      </div>
+      <div id="restaurants" class=" col-md-6 " style="text-align: center; border-style: solid; border-width: 1px;"></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"></script>
+    <script src="assets/js/logic.js" defer></script>
 </body>
 
 </html>

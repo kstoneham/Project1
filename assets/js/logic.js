@@ -37,7 +37,7 @@ $(function () {
               width="100%"
               height="350"
               frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+patio+in+${citySearch}" allowfullscreen>
+              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+with+patio+in+${citySearch}" allowfullscreen>
             </iframe>
           </div>
         </div>
@@ -85,7 +85,7 @@ $(function () {
                   width="100%"
                   height="350"
                   frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+patio+in+${zipCode}" allowfullscreen>
+                  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBU8WngwG699p-gzKCP_VezmXkXqZ64ovc&q=restaurant+with+patio+in+${zipCode}" allowfullscreen>
                 </iframe>
               </div>
             </div>
